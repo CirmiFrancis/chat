@@ -1,5 +1,5 @@
 {
-  "name": "proyecto-chat",
+  "name": "live-chat",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -20,7 +20,8 @@
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^7.1.2",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "sweetalert2": "^11.10.7"
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

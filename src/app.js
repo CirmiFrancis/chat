@@ -1,23 +1,20 @@
-/** CHAT COMUNITARIO COMISIÓN 53130 **/
-
-//Instalamos nodemon -D
-//express socket.io express-handlebars
-
+//Importación de Módulos
 const express = require("express");
 const exphbs = require("express-handlebars");
 const socket = require("socket.io");
-const app = express();
+
+const app = express(); // Crea una instancia de la aplicación Express
 const PUERTO = 8080;
 
-//Middleware
-app.use(express.static("./src/public"));
+//Middlewares
+app.use(express.static("./src/public")); // Cuando el servidor recibe una solicitud para un recurso estático, Express buscará en esta carpeta y servirá el archivo correspondiente si lo encuentra
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 //Configuramos Handlebars
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
-app.set("views", "./src/views");
+app.set("views", "./src/views"); // Establece la ubicación de las vistas (plantillas) de la aplicación
 
 //Rutas
 app.get("/", (req, res) => {
@@ -29,21 +26,17 @@ const httpServer =  app.listen(PUERTO, () => {
     console.log(`Escuchando en el Puerto: ${PUERTO}`);
 })
 
-//Me guardo una referencia del servidor. 
+//Socket.io
+const io = new socket.Server(httpServer); // Crea una instancia de la aplicación Socket.io
 
-//Generamos una instancia de Socket.io del lado de backend.
-const io = new socket.Server(httpServer);
+let messages = []; // Array de mensajes
 
-let messages = [];
-
-//Establecemos la conexión.
-io.on("connection", (socket) => {
+io.on("connection", (socket) => { // Cuando el cliente envía un mensaje, se guarda en el array y se envía a todos los usuarios conectados
     console.log("Nuevo usuario conectado");
-
-    socket.on("message", data => {
+    io.emit("messagesLogs", messages);
+    
+    socket.on("message", data => { 
         messages.push(data);
-
-        //Emitimos mensaje para el cliente, con todo el array de datos: 
         io.emit("messagesLogs", messages);
     })
 })
