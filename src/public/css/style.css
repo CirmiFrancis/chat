@@ -18,39 +18,75 @@ h1 {
 .container-chatbox {
     display: flex;
     justify-content: center;
-    padding: 4px;
     margin-top: 20px;
+    padding: 4px;
 }
 
 .container-chatbox input {
-    overflow: auto;
     width: 960px;
+    margin-inline: 20px;
+    padding: 8px 12px;
     font-size: 18px;
-    border: black 2px solid;
+    border: 2px black solid;
     border-radius: 12px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    padding: 8px 12px;
-    margin-inline: 20px;
+}
+
+.container-usersQuantity {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: white;
 }
 
 .container-messages {
-    overflow: auto;
+    height: 540px;
     display: flex;
     justify-self: center;
-    background-color: white;
-    border: black 2px solid;
-    border-radius: 12px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    padding-block: 12px;
     margin-inline: 40px;
     margin-block: 20px;
+    padding-block: 0px;
+    background-color: white;
+    border: 2px black solid;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
 }
 
-.container-messages #messagesLogs p {
-    font-size: 18px;
-    /* background-color: #b1e8ff; */
+.own-message, .others-message, .server-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 8px 16px;
     padding: 8px;
-    border-radius: 12px;
-    margin-inline: 12px;
-    margin-block: 4px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.own-message {
+    align-items: flex-end;
+    background-color: rgb(215, 255, 255);
+}
+
+.others-message {
+    align-items: flex-start;
+    background-color: rgb(230, 230, 230);
+}
+
+.server-message {
+    align-items: center;
+}
+
+.welcome-message {
+    background-color: rgb(215, 255, 215);
+}
+
+.goodbye-message {
+    background-color: rgb(255, 200, 200);
+}
+
+.own-message p, .others-message p, .server-message p {
+    margin: 0 !important;
+    padding: 0 !important;
+    word-wrap: break-word;
 }
