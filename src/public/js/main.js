@@ -17,6 +17,7 @@ const promptUsername = () => { // Solicita el nombre de usuario
             return !value && "Necesitas escribir un nombre para continuar.";
         },
         allowOutsideClick: false,
+        allowEscapeKey: false
     }).then(result => {
         result.value && socket.emit("checkUser", result.value.toUpperCase());
     });
@@ -30,6 +31,7 @@ socket.on("userExists", () => {
         title: "Nombre de usuario existente",
         text: "Por favor, elige otro nombre de usuario.",
         allowOutsideClick: false,
+        allowEscapeKey: false
     }).then(() => {
         promptUsername();
     });
