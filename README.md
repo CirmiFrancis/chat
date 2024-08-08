@@ -7,11 +7,6 @@ Enter a name to identify yourself, then you can write a message or simply read t
 
 **Deployment made in:** Glitch.com
 
-## Update (v1.1.0) - 13 June 2024
+## Latest Update (v1.1.1) - 08 August 2024
 
-* You can't identify yourself with a name that is already in use
-* Message warning about a connection or disconnection from a user added
-* Now there's color in messages to easily identify yours from others and from the server
-* When there's a new message, it automatically scrolls to the bottom
-* Page is now responsive!
-* And more...
+* **Bug fixed:** now you can't press "Escape" button when you have to write your name in the pop-up.
