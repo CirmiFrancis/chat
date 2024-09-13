@@ -92,7 +92,7 @@ h1 {
 
 @media (max-width: 768px) {
     .container-messages {
-        height: 460px;
+        height: 400px;
         margin-inline: 10px;
     }
 }
