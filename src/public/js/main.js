@@ -41,7 +41,7 @@ socket.on("userAccepted", (username) => {
     user = username;
 });
 
-//Mensaje a enviar
+// Mensaje a enviar
 chatBox.addEventListener("keyup", (event) => {
     if(event.key === "Enter") {
         if(chatBox.value.trim().length > 0) {
@@ -51,7 +51,7 @@ chatBox.addEventListener("keyup", (event) => {
     }
 })
 
-//Listener de mensajes
+// Listener de mensajes
 socket.on("messagesLogs", data => {
     let messages = "";
 
@@ -82,7 +82,7 @@ socket.on("usersQuantity", quantity => {
     usersQuantitySpan.textContent = quantity;
 });
 
-//Mostrar Log de Mensajes
+// Mostrar Log de Mensajes
 socket.on("messagesLogs", (messages) => {
     if (messages.length > 0) {
         document.querySelector('.container-messages').style.display = 'block';
