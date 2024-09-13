@@ -10,4 +10,4 @@ Enter a name to identify yourself, then you can write a message or simply read t
 ## Latest Update (v1.1.2) - 13 September 2024
 
 * **Change:** The chat box and user count are now positioned at the bottom of the page.
-* **Change:** On lower resolutions (768px or less), the height and the inline margins of the messages container have been reduced.
+* **Change:** On lower resolutions (768px or less), the inline margins of the messages container have been reduced.
