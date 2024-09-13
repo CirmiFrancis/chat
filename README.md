@@ -7,6 +7,7 @@ Enter a name to identify yourself, then you can write a message or simply read t
 
 **Deployment made in:** Glitch.com
 
-## Latest Update (v1.1.1) - 08 August 2024
+## Latest Update (v1.1.2) - 13 September 2024
 
-* **Bug fixed:** now you can't press "Escape" button when you have to write your name in the pop-up.
+* **Change:** The chat box and user count are now positioned at the bottom of the page.
+* **Change:** On lower resolutions (768px or less), the inline margins of the messages container have been reduced.
