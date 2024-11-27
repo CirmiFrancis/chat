@@ -1,3 +1,4 @@
+/* Reset y estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -5,31 +6,35 @@
 }
 
 body {
-    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
 }
 
+/* Encabezado */
 h1 {
     text-align: center;
+    padding: 10px;
     color: white;
     background-color: black;
-    padding-block: 10px;
 }
 
+/* Contenedor de mensajes */
 .container-messages {
-    height: 540px;
     display: flex;
-    justify-self: center;
-    margin-inline: 30px;
-    margin-block: 20px;
-    padding-block: 0px;
+    justify-content: center;
+    flex: 1;
+    margin: 0;
+    padding: 0;
     background-color: white;
-    border: 2px black solid;
-    border-radius: 8px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
 }
 
-.own-message, .others-message, .server-message {
+/* Estilos para mensajes */
+.own-message,
+.others-message,
+.server-message {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,37 +66,55 @@ h1 {
     background-color: rgb(255, 200, 200);
 }
 
-.own-message p, .others-message p, .server-message p {
-    margin: 0 !important;
-    padding: 0 !important;
+.own-message p,
+.others-message p,
+.server-message p {
+    margin: 0;
+    padding: 0;
     word-wrap: break-word;
 }
 
+/* Contador de usuarios */
+.container-usersQuantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 10px 0;
+    gap: 4px;
+    color: white;
+}
+
+.container-usersQuantity img {
+    width: 20px;
+    filter: invert(1);
+}
+
+/* Chatbox */
 .container-chatbox {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 0;
+    padding-block: 20px;
+    background-color: gray;
 }
 
 .container-chatbox input {
     width: 960px;
-    margin-inline: 20px;
     padding: 8px 12px;
     font-size: 18px;
-    border: 2px black solid;
+    border: 2px solid black;
     border-radius: 8px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.container-usersQuantity {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    color: white;
-}
-
+/* Estilos responsivos */
 @media (max-width: 768px) {
     .container-messages {
+        margin: 0;
+    }
+
+    .container-chatbox input {
+        width: 100%;
         margin-inline: 10px;
     }
 }

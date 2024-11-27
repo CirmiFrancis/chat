@@ -36,7 +36,6 @@ let usersConnected = {}; // Usuarios conectados
 let usersQuantity = 0; // Cantidad de usuarios
 
 io.on("connection", (socket) => {
-
     socket.on("checkUser", (userName) => {
         if (Object.values(usersConnected).includes(userName)) {
             socket.emit("userExists");

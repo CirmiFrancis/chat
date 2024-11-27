@@ -10,8 +10,8 @@ const messagesContainer = document.querySelector(".container-messages");
 
 const promptUsername = () => { // Solicita el nombre de usuario
     Swal.fire({
-        title: "Identificate",
-        text: "Ingresa un usuario para identificarte en el chat",
+        title: "IDENTIFICATE",
+        text: "Escribe tu nombre de usuario",
         input: "text",
         inputValidator: (value) => {
             return !value && "Necesitas escribir un nombre para continuar.";
